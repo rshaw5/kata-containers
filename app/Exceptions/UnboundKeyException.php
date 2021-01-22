@@ -11,19 +11,7 @@ use Throwable;
  */
 class UnboundKeyException extends Exception
 {
-    /**
-     * UnboundKeyException constructor.
-     * @param string $message
-     * @param int $code
-     * @param Throwable|null $previous
-     */
-    public function __construct(
-        $message = '
-            The requested key-value pair is not bound to this container
-        ',
-        $code = 0,
-        Throwable $previous = null
-    ){
-        parent::__construct($message, $code, $previous);
-    }
+    // Per a discussion with Steve, this will work because 
+    // it will be passed to the constructor automatically.
+    public $message = 'The requested key-value pair is not bound to this container.';
 }
